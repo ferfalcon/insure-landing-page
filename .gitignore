@@ -47,3 +47,6 @@ wp-config.php
 # uncomment the next line
 #/wp-content/themes
 wp-content/plugins/akismet/
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/settings.json
