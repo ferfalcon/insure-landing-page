@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "hsl(256, 26%, 20%)",
+					"name": "Blue 950",
+					"slug": "blue-950"
+				},
+				{
+					"color": "hsl(216, 30%, 68%)",
+					"name": "Blue 500",
+					"slug": "blue-500"
+				},
+				{
+					"color": "hsl(270, 9%, 17%)",
+					"name": "Gray 950",
+					"slug": "gray-950"
+				},
+				{
+					"color": "hsl(273, 4%, 51%)",
+					"name": "Gray 700",
+					"slug": "gray-700"
+				},
+				{
+					"color": "hsl(0, 0%, 98%)",
+					"name": "Gray 50",
+					"slug": "gray-50"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "69.375rem",
+			"wideSize": "90rem"
+		},
+		"spacing": {
+			"units": [ "px", "rem", "em", "%", "vh", "vw" ]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "Karla, Arial, sans-serif",
+					"name": "Karla",
+					"slug": "karla"
+				},
+				{
+					"fontFamily": "\"DM Serif Display\", Georgia, serif",
+					"name": "DM Serif Display",
+					"slug": "dm-serif-display"
+				}
+			],
+			"fontSizes": [
+				{
+					"fluid": false,
+					"name": "Body",
+					"size": "1rem",
+					"slug": "body"
+				},
+				{
+					"fluid": {
+						"max": "4.5rem",
+						"min": "2.75rem"
+					},
+					"name": "Display",
+					"size": "4.5rem",
+					"slug": "display"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "hsl(0, 0%, 100%)",
+			"text": "hsl(273, 4%, 51%)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--karla)",
+			"fontSize": "var(--wp--preset--font-size--body)",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "hsl(270, 9%, 17%)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--dm-serif-display)",
+					"fontWeight": "400",
+					"lineHeight": "1"
+				}
+			}
+		}
+	},
+	"templateParts": []
+}

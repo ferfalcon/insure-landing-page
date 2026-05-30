@@ -1,0 +1,558 @@
+/*
+Theme Name: Insure Landing Page
+Theme URI: https://github.com/ferfalcon/insure-landing-page
+Author: Fernando Falcon
+Author URI: https://ferfalcon.com/
+Description: Block theme implementation of the Frontend Mentor Insure landing page challenge.
+Version: 0.1.0
+Requires at least: 6.6
+Tested up to: 7.0
+Requires PHP: 7.4
+Text Domain: insure-landing-page
+*/
+
+:root {
+	--insure-blue-950: hsl(256 26% 20%);
+	--insure-blue-500: hsl(216 30% 68%);
+	--insure-gray-950: hsl(270 9% 17%);
+	--insure-gray-700: hsl(273 4% 51%);
+	--insure-gray-50: hsl(0 0% 98%);
+	--insure-white: hsl(0 0% 100%);
+	--insure-border: hsl(276 4% 51% / 0.35);
+	--insure-content: min(100% - 3rem, 69.375rem);
+	--insure-heading: "DM Serif Display", Georgia, serif;
+	--insure-body: Karla, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--insure-white);
+	color: var(--insure-gray-700);
+	font-family: var(--insure-body);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+body:has(.nav-toggle-input:checked) {
+	overflow: hidden;
+}
+
+img,
+picture {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.insure-landing-page ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.insure-container {
+	width: var(--insure-content);
+	margin-inline: auto;
+}
+
+.insure-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.5rem;
+	padding: 0.45rem 1.75rem;
+	border: 0.125rem solid currentColor;
+	color: var(--insure-white);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	line-height: 1;
+	text-transform: uppercase;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.insure-button:hover,
+.insure-button:focus-visible {
+	background: var(--insure-white);
+	color: var(--insure-blue-950);
+}
+
+.insure-button--dark {
+	color: var(--insure-gray-950);
+}
+
+.insure-button--dark:hover,
+.insure-button--dark:focus-visible {
+	background: var(--insure-gray-950);
+	color: var(--insure-white);
+}
+
+.insure-header {
+	position: relative;
+	z-index: 3;
+	background: var(--insure-white);
+}
+
+.insure-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 5rem;
+}
+
+.insure-logo {
+	width: 7rem;
+}
+
+.nav-toggle-input {
+	position: fixed;
+	inset: 0 auto auto 0;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.nav-toggle {
+	position: relative;
+	z-index: 5;
+	display: inline-flex;
+	width: 2rem;
+	height: 2rem;
+	align-items: center;
+	justify-content: center;
+	border: 0.125rem solid var(--insure-gray-950);
+	cursor: pointer;
+}
+
+.nav-toggle__icon {
+	width: 1rem;
+	height: 1rem;
+	background: center / contain no-repeat url("assets/images/icon-hamburger.svg");
+}
+
+.nav-toggle-input:checked + .insure-header__inner .nav-toggle__icon {
+	background-image: url("assets/images/icon-close.svg");
+}
+
+.primary-nav {
+	position: fixed;
+	inset: 5rem 0 0;
+	z-index: 4;
+	display: none;
+	min-height: calc(100dvh - 5rem);
+	padding: 2.5rem 1.5rem 15rem;
+	background:
+		bottom center / 100% auto no-repeat url("assets/images/bg-pattern-mobile-nav.svg"),
+		var(--insure-gray-950);
+	color: var(--insure-white);
+}
+
+.nav-toggle-input:checked + .insure-header__inner .primary-nav {
+	display: block;
+}
+
+.primary-nav__list {
+	display: grid;
+	gap: 1.5rem;
+	text-align: center;
+}
+
+.primary-nav a {
+	display: block;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.primary-nav .insure-button {
+	width: min(100%, 20rem);
+	margin-inline: auto;
+}
+
+.insure-intro {
+	position: relative;
+	background: var(--insure-blue-950);
+	color: var(--insure-white);
+	text-align: center;
+}
+
+.insure-intro::before,
+.insure-intro::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.insure-intro::before {
+	top: 28.125rem;
+	left: 0;
+	width: 10.5rem;
+	height: 10.5rem;
+	background-image: url("assets/images/bg-pattern-intro-left-mobile.svg");
+}
+
+.insure-intro::after {
+	right: 0;
+	bottom: -11rem;
+	width: 7.75rem;
+	height: 20.625rem;
+	background-image: url("assets/images/bg-pattern-intro-right-mobile.svg");
+}
+
+.insure-intro__inner {
+	display: grid;
+}
+
+.insure-intro__media {
+	width: 100%;
+}
+
+.insure-intro__media img {
+	width: 100%;
+}
+
+.insure-intro__copy {
+	position: relative;
+	z-index: 1;
+	padding: 5.75rem 1.5rem;
+}
+
+.insure-title {
+	margin: 0 0 1rem;
+	color: var(--insure-white);
+	font-family: var(--insure-heading);
+	font-size: clamp(2.75rem, 12vw, 4.5rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 0.95;
+}
+
+.insure-intro p {
+	max-width: 34rem;
+	margin: 0 auto 2rem;
+	color: hsl(0 0% 100% / 0.9);
+}
+
+.features {
+	padding: 8.75rem 0 9rem;
+	text-align: center;
+}
+
+.features::before {
+	content: "";
+	display: block;
+	width: 9.375rem;
+	height: 0.0625rem;
+	margin: 0 auto 2.25rem;
+	background: var(--insure-border);
+}
+
+.section-title {
+	margin: 0;
+	color: var(--insure-gray-950);
+	font-family: var(--insure-heading);
+	font-size: clamp(2.875rem, 9vw, 4.5rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1;
+}
+
+.features__grid {
+	display: grid;
+	gap: 3.5rem;
+	margin-top: 5rem;
+}
+
+.feature-card {
+	display: grid;
+	justify-items: center;
+	gap: 1.25rem;
+}
+
+.feature-card img {
+	width: 5.375rem;
+	order: -1;
+}
+
+.feature-card h3 {
+	margin: 0;
+	color: var(--insure-gray-950);
+	font-family: var(--insure-heading);
+	font-size: 1.75rem;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.feature-card p {
+	max-width: 22rem;
+	margin: 0;
+}
+
+.work-cta {
+	margin-bottom: 8.75rem;
+}
+
+.work-cta__inner {
+	display: grid;
+	justify-items: center;
+	gap: 2.5rem;
+	padding: 4.5rem 2.25rem;
+	background:
+		top right / auto 100% no-repeat url("assets/images/bg-pattern-how-we-work-mobile.svg"),
+		var(--insure-blue-950);
+	color: var(--insure-white);
+	text-align: center;
+}
+
+.work-cta h2 {
+	max-width: 30rem;
+	margin: 0;
+	color: var(--insure-white);
+	font-family: var(--insure-heading);
+	font-size: clamp(2.5rem, 10vw, 3.5rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1;
+}
+
+.insure-footer {
+	background:
+		top left / 100% auto no-repeat url("assets/images/bg-pattern-footer-mobile.svg"),
+		var(--insure-gray-50);
+}
+
+.insure-footer__inner {
+	padding: 5.5rem 0;
+	text-align: center;
+}
+
+.insure-footer__brand {
+	display: grid;
+	justify-items: center;
+	gap: 2rem;
+	padding-bottom: 2.5rem;
+	border-bottom: 0.0625rem solid var(--insure-border);
+}
+
+.social-list {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.social-list a {
+	display: inline-flex;
+	width: 1.5rem;
+	height: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.7;
+	transition: opacity 180ms ease;
+}
+
+.social-list a:hover,
+.social-list a:focus-visible {
+	opacity: 1;
+}
+
+.footer-nav-grid {
+	display: grid;
+	gap: 2.5rem;
+	padding-top: 2.5rem;
+}
+
+.footer-nav h2 {
+	margin: 0 0 2rem;
+	color: var(--insure-gray-700);
+	font-family: var(--insure-body);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.footer-nav ul {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.footer-nav a {
+	color: var(--insure-blue-950);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+@media (min-width: 48rem) {
+	body:has(.nav-toggle-input:checked) {
+		overflow: auto;
+	}
+
+	.nav-toggle {
+		display: none;
+	}
+
+	.primary-nav {
+		position: static;
+		display: block;
+		min-height: 0;
+		padding: 0;
+		background: transparent;
+		color: var(--insure-gray-700);
+	}
+
+	.primary-nav__list {
+		display: flex;
+		align-items: center;
+		gap: 1.625rem;
+	}
+
+	.primary-nav a {
+		font-size: 0.8125rem;
+	}
+
+	.primary-nav a:hover,
+	.primary-nav a:focus-visible {
+		color: var(--insure-gray-950);
+	}
+
+	.primary-nav .insure-button {
+		width: auto;
+	}
+
+	.insure-intro {
+		min-height: 37.5rem;
+		text-align: left;
+	}
+
+	.insure-intro::before {
+		top: auto;
+		bottom: -20.75rem;
+		width: 12.1875rem;
+		height: 31.5rem;
+		background-image: url("assets/images/bg-pattern-intro-left-desktop.svg");
+	}
+
+	.insure-intro::after {
+		top: 0;
+		right: 0;
+		bottom: auto;
+		width: 27.25rem;
+		height: 37.0625rem;
+		background-image: url("assets/images/bg-pattern-intro-right-desktop.svg");
+	}
+
+	.insure-intro__inner {
+		position: relative;
+		grid-template-columns: minmax(0, 1fr) minmax(20rem, 33.75rem);
+		gap: 1.875rem;
+		align-items: start;
+		width: var(--insure-content);
+		margin-inline: auto;
+	}
+
+	.insure-intro__media {
+		order: 2;
+		padding-top: 6.5625rem;
+	}
+
+	.insure-intro__copy {
+		padding: 10.5rem 0 8rem;
+	}
+
+	.insure-intro__copy::before {
+		content: "";
+		display: block;
+		width: 9.375rem;
+		height: 0.0625rem;
+		margin-bottom: 4rem;
+		background: hsl(0 0% 100% / 0.6);
+	}
+
+	.insure-intro p {
+		margin-inline: 0;
+	}
+
+	.features {
+		padding-top: 19rem;
+		text-align: left;
+	}
+
+	.features::before {
+		margin-inline: 0;
+	}
+
+	.features__grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.875rem;
+	}
+
+	.feature-card {
+		justify-items: start;
+	}
+
+	.work-cta__inner {
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		justify-items: start;
+		padding: 4.25rem 5rem;
+		background-image: url("assets/images/bg-pattern-how-we-work-desktop.svg");
+		text-align: left;
+	}
+
+	.work-cta__inner .insure-button {
+		justify-self: end;
+	}
+
+	.insure-footer {
+		background-image: url("assets/images/bg-pattern-footer-desktop.svg");
+		background-size: 33rem auto;
+	}
+
+	.insure-footer__inner {
+		text-align: left;
+	}
+
+	.insure-footer__brand {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.footer-nav-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 70rem) {
+	.insure-title {
+		max-width: 34rem;
+	}
+}
