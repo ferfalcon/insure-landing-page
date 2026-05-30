@@ -98,5 +98,11 @@
 			}
 		}
 	},
-	"templateParts": []
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		}
+	]
 }

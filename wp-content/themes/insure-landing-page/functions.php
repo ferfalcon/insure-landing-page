@@ -25,5 +25,12 @@ add_action(
 			array( 'insure-landing-page-fonts' ),
 			wp_get_theme()->get( 'Version' )
 		);
+
+		wp_enqueue_style(
+			'insure-landing-page-header',
+			get_theme_file_uri( 'assets/css/header.css' ),
+			array( 'insure-landing-page' ),
+			wp_get_theme()->get( 'Version' )
+		);
 	}
 );
