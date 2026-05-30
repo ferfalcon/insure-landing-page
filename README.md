@@ -44,11 +44,6 @@ Users should be able to:
 
 ### Useful resources
 
-Install skills with pnpm 
-```bash
-pnpm dlx skills add <skill-url> --skill <skill-name>
-```
-
 - [Automattic | Agent skills](https://www.skills.sh/automattic/agent-skills) - Skills from Automatic.
 
 - [Automattic | WP Project Triage](https://www.skills.sh/automattic/agent-skills/wp-project-triage) - Use this skill to quickly understand what kind of WordPress repo you’re in and what commands/conventions to follow before making changes.  
