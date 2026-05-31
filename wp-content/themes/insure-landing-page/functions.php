@@ -20,6 +20,7 @@ function insure_landing_page_editor_styles() {
 			'assets/css/intro.css',
 			'assets/css/features.css',
 			'assets/css/work-cta.css',
+			'assets/css/footer.css',
 		)
 	);
 }

@@ -17,6 +17,14 @@
 	border-bottom: 0.0625rem solid var(--insure-border);
 }
 
+.insure-footer .wp-block-image {
+	margin: 0;
+}
+
+.insure-footer .insure-logo img {
+	width: 100%;
+}
+
 .social-list,
 .footer-nav ul {
 	list-style: none;
@@ -30,6 +38,11 @@
 	gap: 1rem;
 }
 
+.social-list .wp-block-image {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
 .social-list a {
 	display: inline-flex;
 	width: 1.5rem;
@@ -38,6 +51,12 @@
 	justify-content: center;
 	opacity: 0.7;
 	transition: opacity 180ms ease;
+}
+
+.social-list img {
+	width: 1.5rem;
+	height: 1.5rem;
+	object-fit: contain;
 }
 
 .social-list a:hover,
@@ -65,6 +84,10 @@
 .footer-nav ul {
 	display: grid;
 	gap: 0.75rem;
+}
+
+.footer-nav li {
+	margin: 0;
 }
 
 .footer-nav a {
