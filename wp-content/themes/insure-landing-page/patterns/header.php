@@ -13,7 +13,7 @@ $assets = trailingslashit( get_theme_file_uri( 'assets/images' ) );
 ?>
 
 <!-- wp:group {"tagName":"header","className":"insure-header"} -->
-<header class="wp-block-group insure-header"><!-- wp:group {"className":"insure-header__inner insure-container"} -->
+<div class="wp-block-group insure-header"><!-- wp:group {"className":"insure-header__inner insure-container"} -->
 <div class="wp-block-group insure-header__inner insure-container"><!-- wp:image {"url":"<?php echo esc_url( $assets . 'logo.svg' ); ?>","alt":"Insure","href":"#","className":"insure-logo"} -->
 <figure class="wp-block-image insure-logo"><a href="#"><img src="<?php echo esc_url( $assets . 'logo.svg' ); ?>" alt="Insure"/></a></figure>
 <!-- /wp:image -->
@@ -31,5 +31,5 @@ $assets = trailingslashit( get_theme_file_uri( 'assets/images' ) );
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 <!-- /wp:navigation --></div>
-<!-- /wp:group --></header>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
