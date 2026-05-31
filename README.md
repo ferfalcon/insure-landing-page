@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/ferfalcon/insure-landing-page)
-- Live Site URL: [Add live site URL here](https://insure-landing-page.ferfalcon.shop/)
+- Repository URL: [https://github.com/ferfalcon/insure-landing-page](https://github.com/ferfalcon/insure-landing-page)
+- Live Site URL: [https://insure-landing-page.ferfalcon.shop/](https://insure-landing-page.ferfalcon.shop/)
 
 ## My process
 
