@@ -102,6 +102,10 @@ pnpm dlx skills add https://github.com/automattic/agent-skills --skill wp-block-
 pnpm dlx skills add https://github.com/github/awesome-copilot --skill git-commit
 ```
 
+- [Google | Build with Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) - Modern Web Guidance is a set of skills that embed web platform expertise, best practices, and browser compatibility data directly into your coding agents.
+
+
+
 ### AI Collaboration
 
 - OpenAI ChatGPT for planning, gathering information and prompt writting.
