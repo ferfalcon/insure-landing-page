@@ -2,6 +2,10 @@ body:has(.primary-nav .wp-block-navigation__responsive-container.is-menu-open) {
 	overflow: hidden;
 }
 
+.wp-block-image.insure-logo>a {
+	display: block;
+}
+
 .insure-button--dark {
 	color: var(--insure-gray-950);
 }
@@ -45,8 +49,8 @@ body:has(.primary-nav .wp-block-navigation__responsive-container.is-menu-open) {
 	height: 2rem;
 	align-items: center;
 	justify-content: center;
-	border: 0.125rem solid var(--insure-gray-950);
 	color: var(--insure-gray-950);
+	background: center / contain no-repeat url("../images/icon-hamburger.svg");
 }
 
 .primary-nav .wp-block-navigation__responsive-container-open {
@@ -57,18 +61,12 @@ body:has(.primary-nav .wp-block-navigation__responsive-container.is-menu-open) {
 	position: fixed;
 	top: 1.5rem;
 	right: 1.5rem;
+	background-image: url("../images/icon-close.svg");
 }
 
 .primary-nav .wp-block-navigation__responsive-container-open svg,
 .primary-nav .wp-block-navigation__responsive-container-close svg {
-	width: 1rem;
-	height: 1rem;
-	fill: transparent;
-	background: center / contain no-repeat url("../images/icon-hamburger.svg");
-}
-
-.primary-nav .wp-block-navigation__responsive-container-close svg {
-	background-image: url("../images/icon-close.svg");
+	display: none;
 }
 
 .primary-nav .wp-block-navigation__responsive-container.is-menu-open {
