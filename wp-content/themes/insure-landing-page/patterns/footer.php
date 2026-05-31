@@ -13,7 +13,7 @@ $assets = trailingslashit( get_theme_file_uri( 'assets/images' ) );
 ?>
 
 <!-- wp:group {"tagName":"footer","className":"insure-footer"} -->
-<footer class="wp-block-group insure-footer"><!-- wp:group {"className":"insure-footer__inner insure-container"} -->
+<div class="wp-block-group insure-footer"><!-- wp:group {"className":"insure-footer__inner insure-container"} -->
 <div class="wp-block-group insure-footer__inner insure-container"><!-- wp:group {"className":"insure-footer__brand"} -->
 <div class="wp-block-group insure-footer__brand"><!-- wp:image {"url":"<?php echo esc_url( $assets . 'logo.svg' ); ?>","alt":"Insure","href":"#","className":"insure-logo"} -->
 <figure class="wp-block-image insure-logo"><a href="#"><img src="<?php echo esc_url( $assets . 'logo.svg' ); ?>" alt="Insure"/></a></figure>
@@ -129,5 +129,5 @@ $assets = trailingslashit( get_theme_file_uri( 'assets/images' ) );
 <!-- /wp:list --></nav>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></footer>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
