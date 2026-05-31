@@ -34,9 +34,14 @@
 	gap: 1.25rem;
 }
 
-.feature-card img {
-	width: 5.375rem;
+.feature-card .wp-block-image {
 	order: -1;
+	width: 5.375rem;
+	margin: 0;
+}
+
+.feature-card .wp-block-image img {
+	width: 5.375rem;
 }
 
 .feature-card h3 {
