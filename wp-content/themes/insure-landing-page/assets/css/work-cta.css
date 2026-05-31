@@ -25,6 +25,30 @@
 	line-height: 1;
 }
 
+.work-cta .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.5rem;
+	padding: 0.45rem 1.75rem;
+	border: 0.125rem solid currentColor;
+	border-radius: 0;
+	background: transparent;
+	color: var(--insure-white);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	line-height: 1;
+	text-transform: uppercase;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.work-cta .wp-block-button__link:hover,
+.work-cta .wp-block-button__link:focus-visible {
+	background: var(--insure-white);
+	color: var(--insure-blue-950);
+}
+
 @media (min-width: 48rem) {
 	.work-cta__inner {
 		grid-template-columns: minmax(0, 1fr) auto;
@@ -35,7 +59,7 @@
 		text-align: left;
 	}
 
-	.work-cta__inner .insure-button {
+	.work-cta__actions {
 		justify-self: end;
 	}
 }
