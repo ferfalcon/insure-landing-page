@@ -1,0 +1,126 @@
+.insure-intro {
+	position: relative;
+	background: var(--insure-blue-950);
+	color: var(--insure-white);
+	text-align: center;
+}
+
+.insure-intro::before,
+.insure-intro::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.insure-intro::before {
+	top: 28.125rem;
+	left: 0;
+	width: 10.5rem;
+	height: 10.5rem;
+	background-image: url("../images/bg-pattern-intro-left-mobile.svg");
+}
+
+.insure-intro::after {
+	right: 0;
+	bottom: -11rem;
+	width: 7.75rem;
+	height: 20.625rem;
+	background-image: url("../images/bg-pattern-intro-right-mobile.svg");
+}
+
+.insure-intro__inner {
+	display: grid;
+}
+
+.insure-intro__media {
+	width: 100%;
+}
+
+.insure-intro__media img {
+	width: 100%;
+}
+
+.insure-intro__copy {
+	position: relative;
+	z-index: 1;
+	padding: 5.75rem 1.5rem;
+}
+
+.insure-title {
+	margin: 0 0 1rem;
+	color: var(--insure-white);
+	font-family: var(--insure-heading);
+	font-size: clamp(2.75rem, 12vw, 4.5rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 0.95;
+}
+
+.insure-intro p {
+	max-width: 34rem;
+	margin: 0 auto 2rem;
+	color: hsl(0 0% 100% / 0.9);
+}
+
+@media (min-width: 48rem) {
+	.insure-intro {
+		min-height: 37.5rem;
+		text-align: left;
+	}
+
+	.insure-intro::before {
+		top: auto;
+		bottom: -20.75rem;
+		width: 12.1875rem;
+		height: 31.5rem;
+		background-image: url("../images/bg-pattern-intro-left-desktop.svg");
+	}
+
+	.insure-intro::after {
+		top: 0;
+		right: 0;
+		bottom: auto;
+		width: 27.25rem;
+		height: 37.0625rem;
+		background-image: url("../images/bg-pattern-intro-right-desktop.svg");
+	}
+
+	.insure-intro__inner {
+		position: relative;
+		grid-template-columns: minmax(0, 1fr) minmax(20rem, 33.75rem);
+		gap: 1.875rem;
+		align-items: start;
+		width: var(--insure-content);
+		margin-inline: auto;
+	}
+
+	.insure-intro__media {
+		order: 2;
+		padding-top: 6.5625rem;
+	}
+
+	.insure-intro__copy {
+		padding: 10.5rem 0 8rem;
+	}
+
+	.insure-intro__copy::before {
+		content: "";
+		display: block;
+		width: 9.375rem;
+		height: 0.0625rem;
+		margin-bottom: 4rem;
+		background: hsl(0 0% 100% / 0.6);
+	}
+
+	.insure-intro p {
+		margin-inline: 0;
+	}
+}
+
+@media (min-width: 70rem) {
+	.insure-title {
+		max-width: 34rem;
+	}
+}

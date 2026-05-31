@@ -1,0 +1,41 @@
+.work-cta {
+	margin-bottom: 8.75rem;
+}
+
+.work-cta__inner {
+	display: grid;
+	justify-items: center;
+	gap: 2.5rem;
+	padding: 4.5rem 2.25rem;
+	background:
+		top right / auto 100% no-repeat url("../images/bg-pattern-how-we-work-mobile.svg"),
+		var(--insure-blue-950);
+	color: var(--insure-white);
+	text-align: center;
+}
+
+.work-cta h2 {
+	max-width: 30rem;
+	margin: 0;
+	color: var(--insure-white);
+	font-family: var(--insure-heading);
+	font-size: clamp(2.5rem, 10vw, 3.5rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1;
+}
+
+@media (min-width: 48rem) {
+	.work-cta__inner {
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		justify-items: start;
+		padding: 4.25rem 5rem;
+		background-image: url("../images/bg-pattern-how-we-work-desktop.svg");
+		text-align: left;
+	}
+
+	.work-cta__inner .insure-button {
+		justify-self: end;
+	}
+}

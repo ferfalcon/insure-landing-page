@@ -34,6 +34,27 @@ add_action(
 		);
 
 		wp_enqueue_style(
+			'insure-landing-page-intro',
+			get_theme_file_uri( 'assets/css/intro.css' ),
+			array( 'insure-landing-page' ),
+			wp_get_theme()->get( 'Version' )
+		);
+
+		wp_enqueue_style(
+			'insure-landing-page-features',
+			get_theme_file_uri( 'assets/css/features.css' ),
+			array( 'insure-landing-page' ),
+			wp_get_theme()->get( 'Version' )
+		);
+
+		wp_enqueue_style(
+			'insure-landing-page-work-cta',
+			get_theme_file_uri( 'assets/css/work-cta.css' ),
+			array( 'insure-landing-page' ),
+			wp_get_theme()->get( 'Version' )
+		);
+
+		wp_enqueue_style(
 			'insure-landing-page-footer',
 			get_theme_file_uri( 'assets/css/footer.css' ),
 			array( 'insure-landing-page' ),
