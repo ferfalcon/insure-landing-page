@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register theme styles in the block editor.
  */
 function insure_landing_page_editor_styles() {
+	add_theme_support( 'editor-styles' );
+
 	add_editor_style(
 		array(
 			'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap',
