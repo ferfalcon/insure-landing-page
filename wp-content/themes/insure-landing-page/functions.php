@@ -9,6 +9,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Register theme styles in the block editor.
+ */
+function insure_landing_page_editor_styles() {
+	add_editor_style(
+		array(
+			'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap',
+			'style.css',
+			'assets/css/work-cta.css',
+		)
+	);
+}
+add_action( 'after_setup_theme', 'insure_landing_page_editor_styles' );
+
 add_action(
 	'wp_enqueue_scripts',
 	function () {
