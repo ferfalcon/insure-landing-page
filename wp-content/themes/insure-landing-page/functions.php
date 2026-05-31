@@ -17,6 +17,7 @@ function insure_landing_page_editor_styles() {
 		array(
 			'https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap',
 			'style.css',
+			'assets/css/header.css',
 			'assets/css/intro.css',
 			'assets/css/features.css',
 			'assets/css/work-cta.css',

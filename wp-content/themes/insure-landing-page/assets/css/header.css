@@ -1,11 +1,5 @@
-body:has(.nav-toggle-input:checked) {
+body:has(.primary-nav .wp-block-navigation__responsive-container.is-menu-open) {
 	overflow: hidden;
-}
-
-.primary-nav__list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 .insure-button--dark {
@@ -31,17 +25,20 @@ body:has(.nav-toggle-input:checked) {
 	min-height: 5rem;
 }
 
-.nav-toggle-input {
-	position: fixed;
-	inset: 0 auto auto 0;
-	width: 1px;
-	height: 1px;
-	opacity: 0;
-	pointer-events: none;
+.insure-header .wp-block-image {
+	margin: 0;
 }
 
-.nav-toggle {
-	position: relative;
+.insure-header .insure-logo img {
+	width: 100%;
+}
+
+.primary-nav {
+	color: var(--insure-white);
+}
+
+.primary-nav .wp-block-navigation__responsive-container-open,
+.primary-nav .wp-block-navigation__responsive-container-close {
 	z-index: 5;
 	display: inline-flex;
 	width: 2rem;
@@ -49,24 +46,33 @@ body:has(.nav-toggle-input:checked) {
 	align-items: center;
 	justify-content: center;
 	border: 0.125rem solid var(--insure-gray-950);
-	cursor: pointer;
+	color: var(--insure-gray-950);
 }
 
-.nav-toggle__icon {
+.primary-nav .wp-block-navigation__responsive-container-open {
+	position: relative;
+}
+
+.primary-nav .wp-block-navigation__responsive-container-close {
+	position: fixed;
+	top: 1.5rem;
+	right: 1.5rem;
+}
+
+.primary-nav .wp-block-navigation__responsive-container-open svg,
+.primary-nav .wp-block-navigation__responsive-container-close svg {
 	width: 1rem;
 	height: 1rem;
+	fill: transparent;
 	background: center / contain no-repeat url("../images/icon-hamburger.svg");
 }
 
-.nav-toggle-input:checked + .insure-header__inner .nav-toggle__icon {
+.primary-nav .wp-block-navigation__responsive-container-close svg {
 	background-image: url("../images/icon-close.svg");
 }
 
-.primary-nav {
-	position: fixed;
+.primary-nav .wp-block-navigation__responsive-container.is-menu-open {
 	inset: 5rem 0 0;
-	z-index: 4;
-	display: none;
 	min-height: calc(100dvh - 5rem);
 	padding: 2.5rem 1.5rem 15rem;
 	background:
@@ -75,63 +81,100 @@ body:has(.nav-toggle-input:checked) {
 	color: var(--insure-white);
 }
 
-.nav-toggle-input:checked + .insure-header__inner .primary-nav {
-	display: block;
-}
-
-.primary-nav__list {
+.primary-nav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
 	display: grid;
 	gap: 1.5rem;
+	padding-top: 0;
 	text-align: center;
 }
 
-.primary-nav a {
+.primary-nav .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	display: grid;
+	gap: 1.5rem;
+	width: 100%;
+}
+
+.primary-nav .wp-block-navigation-item__content,
+.primary-nav .wp-block-button__link {
 	display: block;
 	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: 0.08em;
+	line-height: 1;
 	text-transform: uppercase;
 }
 
-.primary-nav .insure-button {
+.primary-nav .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	width: min(100%, 20rem);
+	min-height: 2.5rem;
 	margin-inline: auto;
+	padding: 0.45rem 1.75rem;
+	border: 0.125rem solid currentColor;
+	border-radius: 0;
+	background: transparent;
+	color: currentColor;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.primary-nav .wp-block-button__link:hover,
+.primary-nav .wp-block-button__link:focus-visible {
+	background: var(--insure-white);
+	color: var(--insure-gray-950);
 }
 
 @media (min-width: 48rem) {
-	body:has(.nav-toggle-input:checked) {
+	body:has(.primary-nav .wp-block-navigation__responsive-container.is-menu-open) {
 		overflow: auto;
 	}
 
-	.nav-toggle {
-		display: none;
-	}
-
 	.primary-nav {
-		position: static;
-		display: block;
-		min-height: 0;
-		padding: 0;
-		background: transparent;
 		color: var(--insure-gray-700);
 	}
 
-	.primary-nav__list {
+	.primary-nav .wp-block-navigation__responsive-container-open {
+		display: none;
+	}
+
+	.primary-nav .wp-block-navigation__responsive-container:not(.is-menu-open) {
+		position: static;
+		display: block;
+		width: 100%;
+		background: transparent !important;
+		color: inherit !important;
+	}
+
+	.primary-nav .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__responsive-container-close {
+		display: none;
+	}
+
+	.primary-nav .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__responsive-container-content,
+	.primary-nav .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container {
 		display: flex;
 		align-items: center;
 		gap: 1.625rem;
 	}
 
-	.primary-nav a {
+	.primary-nav .wp-block-navigation-item__content,
+	.primary-nav .wp-block-button__link {
 		font-size: 0.8125rem;
 	}
 
-	.primary-nav a:hover,
-	.primary-nav a:focus-visible {
+	.primary-nav .wp-block-navigation-item__content:hover,
+	.primary-nav .wp-block-navigation-item__content:focus-visible {
 		color: var(--insure-gray-950);
 	}
 
-	.primary-nav .insure-button {
+	.primary-nav .wp-block-button__link {
 		width: auto;
+		color: var(--insure-gray-950);
+	}
+
+	.primary-nav .wp-block-button__link:hover,
+	.primary-nav .wp-block-button__link:focus-visible {
+		background: var(--insure-gray-950);
+		color: var(--insure-white);
 	}
 }
