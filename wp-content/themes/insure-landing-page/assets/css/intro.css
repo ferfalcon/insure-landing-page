@@ -38,8 +38,17 @@
 	width: 100%;
 }
 
+.insure-intro__media .wp-block-image {
+	width: 100%;
+	margin: 0;
+}
+
 .insure-intro__media img {
 	width: 100%;
+}
+
+.insure-intro__image--desktop {
+	display: none;
 }
 
 .insure-intro__copy {
@@ -62,6 +71,34 @@
 	max-width: 34rem;
 	margin: 0 auto 2rem;
 	color: hsl(0 0% 100% / 0.9);
+}
+
+.insure-intro__actions {
+	justify-content: center;
+}
+
+.insure-intro .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.5rem;
+	padding: 0.45rem 1.75rem;
+	border: 0.125rem solid currentColor;
+	border-radius: 0;
+	background: transparent;
+	color: var(--insure-white);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	line-height: 1;
+	text-transform: uppercase;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.insure-intro .wp-block-button__link:hover,
+.insure-intro .wp-block-button__link:focus-visible {
+	background: var(--insure-white);
+	color: var(--insure-blue-950);
 }
 
 @media (min-width: 48rem) {
@@ -101,6 +138,14 @@
 		padding-top: 6.5625rem;
 	}
 
+	.insure-intro__image--mobile {
+		display: none;
+	}
+
+	.insure-intro__image--desktop {
+		display: block;
+	}
+
 	.insure-intro__copy {
 		padding: 10.5rem 0 8rem;
 	}
@@ -116,6 +161,10 @@
 
 	.insure-intro p {
 		margin-inline: 0;
+	}
+
+	.insure-intro__actions {
+		justify-content: flex-start;
 	}
 }
 
