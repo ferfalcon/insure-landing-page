@@ -4,11 +4,13 @@
 
 This repository is a full WordPress checkout configured for DDEV, with the project work centered on the custom block theme at `wp-content/themes/insure-landing-page/`.
 
-- `wp-content/themes/insure-landing-page/style.css`: theme header, global CSS, responsive layout, and component styles.
-- `wp-content/themes/insure-landing-page/functions.php`: theme setup and stylesheet/font enqueues.
+- `wp-content/themes/insure-landing-page/style.css`: theme header, global design tokens, base element styles, and shared utilities.
+- `wp-content/themes/insure-landing-page/functions.php`: theme setup plus Google Font, global stylesheet, component stylesheet, and editor style enqueues.
 - `wp-content/themes/insure-landing-page/theme.json`: block theme settings, palettes, typography, and layout presets.
 - `wp-content/themes/insure-landing-page/templates/`: block theme templates, including `front-page.html`.
-- `wp-content/themes/insure-landing-page/patterns/`: PHP block patterns used to render the landing page.
+- `wp-content/themes/insure-landing-page/parts/`: block template parts for reusable header and footer template structure.
+- `wp-content/themes/insure-landing-page/patterns/`: PHP block patterns used to compose the landing page sections.
+- `wp-content/themes/insure-landing-page/assets/css/`: section and component stylesheets, currently split across `header.css`, `intro.css`, `features.css`, `work-cta.css`, and `footer.css`.
 - `wp-content/themes/insure-landing-page/assets/images/`: challenge images, SVG icons, and decorative patterns.
 - `starting-files/`: original Frontend Mentor reference files; use for comparison, not runtime changes.
 
@@ -30,7 +32,7 @@ There is no Node, Composer, or asset build pipeline in this repository. CSS and 
 
 Use tabs for all PHP indentation. Do not use spaces for indentation. Follow WordPress PHP spacing conventions, including escaped output such as `esc_url()`. Keep PHP functions and handles prefixed with `insure-landing-page` or `insure_` patterns where applicable.
 
-CSS uses custom properties under `:root`, mobile-first media queries, and BEM-like class names such as `.insure-header__inner` and `.insure-button--dark`. Keep new theme classes scoped with the `insure-` prefix.
+CSS uses custom properties under `:root`, mobile-first media queries, and BEM-like class names such as `.insure-header__inner` and `.insure-button--dark`. Keep new theme classes scoped with the `insure-` prefix. Put global tokens, resets, and shared utilities in `style.css`; put section-specific layout and component rules in the matching file under `assets/css/`.
 
 ## Testing Guidelines
 
