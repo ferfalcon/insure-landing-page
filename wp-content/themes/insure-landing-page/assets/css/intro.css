@@ -3,12 +3,14 @@
 	background: var(--insure-blue-950);
 	color: var(--insure-white);
 	text-align: center;
+	isolation: isolate;
 }
 
 .insure-intro::before,
 .insure-intro::after {
 	content: "";
 	position: absolute;
+	z-index: 0;
 	pointer-events: none;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -31,6 +33,8 @@
 }
 
 .insure-intro__inner {
+	position: relative;
+	z-index: 1;
 	display: grid;
 }
 
@@ -45,6 +49,7 @@
 
 .insure-intro__media img {
 	width: 100%;
+	height: auto;
 }
 
 .insure-intro__image--desktop {
@@ -61,7 +66,7 @@
 	margin: 0 0 1rem;
 	color: var(--insure-white);
 	font-family: var(--insure-heading);
-	font-size: clamp(2.75rem, 12vw, 4.5rem);
+	font-size: clamp(2.75rem, 12vw, 3rem);
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: 0.95;
@@ -102,8 +107,37 @@
 }
 
 @media (min-width: 48rem) {
+	.insure-intro__image--mobile {
+		display: none;
+	}
+
+	.insure-intro__image--desktop {
+		display: block;
+	}
+
+	.insure-intro__media {
+		height: 28.125rem;
+		overflow: hidden;
+	}
+
+	.insure-intro__media .wp-block-image {
+		height: 100%;
+	}
+
+	.insure-intro__media img {
+		height: 100%;
+		object-fit: cover;
+		object-position: center 33%;
+	}
+
+	.insure-intro__copy {
+		padding-block: 5.75rem;
+	}
+}
+
+@media (min-width: 70rem) {
 	.insure-intro {
-		min-height: 37.5rem;
+		height: 37.5rem;
 		text-align: left;
 	}
 
@@ -125,7 +159,6 @@
 	}
 
 	.insure-intro__inner {
-		position: relative;
 		grid-template-columns: minmax(0, 1fr) minmax(20rem, 33.75rem);
 		gap: 1.875rem;
 		align-items: start;
@@ -135,19 +168,23 @@
 
 	.insure-intro__media {
 		order: 2;
+		height: auto;
 		padding-top: 6.5625rem;
+		overflow: visible;
 	}
 
-	.insure-intro__image--mobile {
-		display: none;
+	.insure-intro__media .wp-block-image {
+		height: auto;
 	}
 
-	.insure-intro__image--desktop {
-		display: block;
+	.insure-intro__media img {
+		height: auto;
+		object-fit: initial;
+		object-position: initial;
 	}
 
 	.insure-intro__copy {
-		padding: 10.5rem 0 8rem;
+		padding: 6.5625rem 0 8rem;
 	}
 
 	.insure-intro__copy::before {
@@ -166,10 +203,9 @@
 	.insure-intro__actions {
 		justify-content: flex-start;
 	}
-}
 
-@media (min-width: 70rem) {
 	.insure-title {
 		max-width: 34rem;
+		font-size: 4.5rem;
 	}
 }
